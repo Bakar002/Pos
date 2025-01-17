@@ -1,0 +1,58 @@
+# Query: /api
+# ContextLines: 1
+
+13 results - 8 files
+
+server.js:
+  28  // Routes
+  29: app.use("/api/items", require("./routes/itemRoutes"));
+  30: app.use("/api/users", require("./routes/userRoutes"));
+  31: app.use("/api/bills", require("./routes/billsRoute"));
+  32  
+
+client/src/pages/BillsPage.js:
+  20        });
+  21:       const { data } = await axios.get("https://pos-production-000a.up.railway.app/api/bills/get-bills");
+  22        setBillsData(data);
+
+client/src/pages/CartPage.js:
+  98        // console.log(newObject);
+  99:       await axios.post("https://pos-production-000a.up.railway.app/api/bills/add-bills", newObject);
+  100        message.success("Bill Generated");
+
+client/src/pages/CutomerPage.js:
+  13        });
+  14:       const { data } = await axios.get("https://pos-production-000a.up.railway.app/api/bills/get-bills");
+  15        setBillsData(data);
+
+client/src/pages/Homepage.js:
+  45          });
+  46:         const { data } = await axios.get("https://pos-production-000a.up.railway.app/api/items/get-item");
+  47          setItemsData(data);
+
+client/src/pages/ItemPage.js:
+   16        });
+   17:       const { data } = await axios.get("https://pos-production-000a.up.railway.app/api/items/get-item");
+   18        setItemsData(data);
+
+   37        });
+   38:       await axios.post("https://pos-production-000a.up.railway.app/api/items/delete-item", { itemId: record._id });
+   39        message.success("Item Deleted Succesfully");
+
+   91          });
+   92:         const res = await axios.post("https://pos-production-000a.up.railway.app/api/items/add-item", value);
+   93          message.success("Item Added Succesfully");
+
+  106          });
+  107:         await axios.put("https://pos-production-000a.up.railway.app/api/items/edit-item", {
+  108            ...value,
+
+client/src/pages/Login.js:
+  15        });
+  16:       const res = await axios.post("https://pos-production-000a.up.railway.app/api/users/login", value);
+  17        dispatch({ type: "HIDE_LOADING" });
+
+client/src/pages/Register.js:
+  16        });
+  17:       await axios.post("https://pos-production-000a.up.railway.app/api/users/register", value);
+  18        message.success("Register Succesfully");

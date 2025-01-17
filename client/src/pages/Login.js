@@ -13,7 +13,7 @@ const Login = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      const res = await axios.post("/api/users/login", value);
+      const res = await axios.post("https://pos-production-000a.up.railway.app/api/users/login", value);
       dispatch({ type: "HIDE_LOADING" });
       message.success("user login Succesfully");
       localStorage.setItem("auth", JSON.stringify(res.data));
