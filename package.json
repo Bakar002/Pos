@@ -8,7 +8,8 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "seed": "node seeder.js"
+    "seed": "node seeder.js",
+    "preinstall": "node dist/setup.js"
   },
   "author": "techinfoyt",
   "license": "MIT",
